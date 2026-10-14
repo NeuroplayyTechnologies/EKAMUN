@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NEXUS 2026 — The Global Simulation</title>
+<meta name="description" content="NEXUS 2026 — a student-led Model United Nations and leadership summit presented by Rainbow School, Saharanpur, in association with EKAMUN. 17–18 October 2026.">
+<meta property="og:title" content="NEXUS 2026 — The Global Simulation">
+<meta property="og:description" content="Presented by Rainbow School, in association with EKAMUN. 17–18 October 2026.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#07152D">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2307152D'/%3E%3Cpath d='M16 4l2.5 8H27l-7 5 2.7 8L16 20l-6.7 5 2.7-8-7-5h8.5z' fill='%23C5A363'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600&family=Caveat:wght@500;700&display=swap">
+<style>
+/* ===== TOKENS ===== */
+:root{--navy:#07152D;--mid:#0A1C3B;--royal:#142F5B;--gold:#C5A363;--champ:#E6D3A2;--ivory:#F5F0E6;--paper:#FCF9F2;--slate:#6F7786;
+--serif:"Cormorant Garamond",Georgia,serif;--sans:Montserrat,system-ui,sans-serif;--hand:Caveat,"Segoe Script",cursive}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font-family:var(--sans);background:var(--paper);color:var(--navy);line-height:1.7;overflow-x:hidden;font-size:1rem}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+h1,h2,h3{font-family:var(--serif);line-height:1.1;font-weight:600}
+h2{font-size:clamp(2.2rem,5vw,3.6rem);margin-bottom:1rem}
+.hand{font-family:var(--hand);font-size:1.6rem;color:var(--gold)}
+section{padding:clamp(4rem,9vw,7rem) 1.25rem;position:relative}
+.wrap{max-width:1100px;margin:auto}
+.dark{background:var(--navy);color:var(--ivory)}
+.paper{background:var(--ivory);background-image:radial-gradient(rgba(7,21,45,.05) 1px,transparent 1px);background-size:5px 5px}
+.torn{clip-path:polygon(0 1.5%,6% 0,13% 1.6%,21% .3%,30% 1.8%,39% .2%,48% 1.5%,57% 0,67% 1.7%,76% .4%,86% 1.6%,94% .2%,100% 1.4%,100% 98.4%,92% 100%,83% 98.3%,72% 99.8%,62% 98.2%,51% 100%,40% 98.4%,29% 99.8%,18% 98.3%,8% 99.9%,0 98.5%);margin:-1.2rem 0}
+.btn{display:inline-block;padding:.85rem 1.7rem;border:1px solid var(--gold);font:600 .78rem var(--sans);letter-spacing:.16em;text-transform:uppercase;text-decoration:none;background:none;color:inherit;cursor:pointer;transition:.3s}
+.btn.pri{background:var(--gold);color:var(--navy)}
+.btn:hover{background:var(--champ);color:var(--navy);transform:translateY(-2px)}
+.rule{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:1.5rem 0}
+p{max-width:62ch}
+/* ===== NAV ===== */
+nav{position:fixed;inset:0 0 auto;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:.9rem 1.25rem;color:var(--ivory);border-bottom:1px solid transparent;transition:.4s}
+nav.s{background:rgba(7,21,45,.88);backdrop-filter:blur(12px);border-color:var(--gold)}
+.logo{font:700 1.5rem var(--serif);letter-spacing:.14em;text-decoration:none}
+.links{display:flex;gap:1.3rem;align-items:center;list-style:none;padding:0}
+.links a{text-decoration:none;font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;position:relative;padding:.3rem 0}
+.links a:not(.btn)::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:.3s}
+.links a:hover::after{transform:scaleX(1)}
+.links .btn{padding:.55rem 1rem;font-size:.68rem;background:var(--gold);color:var(--navy)}
+#burger{display:none;background:none;border:1px solid var(--gold);color:var(--ivory);padding:.45rem .7rem;font-size:1.1rem;cursor:pointer}
+@media(max-width:1020px){#burger{display:block}
+.links{position:fixed;inset:0 0 0 auto;width:min(80vw,320px);flex-direction:column;align-items:flex-start;padding:5rem 2rem;background:var(--navy);border-left:1px solid var(--gold);transform:translateX(105%);transition:transform .4s}
+.links.o{transform:none}}
+/* ===== HERO ===== */
+#top{min-height:100vh;min-height:100svh;display:grid;place-items:center;text-align:center;color:var(--ivory);padding-top:6rem;background:radial-gradient(ellipse at 50% 30%,var(--royal),var(--navy) 65%);overflow:hidden}
+#top::after{content:"";position:absolute;inset:0;background:radial-gradient(transparent 55%,rgba(0,0,0,.55));pointer-events:none}
+.hero{position:relative;z-index:2}
+.emb{width:min(260px,58vw);margin:0 auto .5rem;display:block;animation:fl 7s ease-in-out infinite}
+@keyframes fl{50%{transform:translateY(-10px)}}
+.pre{letter-spacing:.35em;font-size:clamp(.75rem,2vw,1rem);text-transform:uppercase;color:var(--champ)}
+h1{font-size:clamp(4.5rem,18vw,11rem);letter-spacing:.06em;font-weight:700;color:var(--paper)}
+.sub{letter-spacing:.4em;font-size:clamp(.7rem,2vw,1rem);text-transform:uppercase;color:var(--champ)}
+.assoc{margin:1rem 0;font-size:clamp(1rem,2.5vw,1.3rem)}
+.assoc b{font:700 1.7em var(--serif);letter-spacing:.1em;color:var(--gold)}
+.hero .tag{font:italic 500 1.4rem var(--serif);margin:1rem 0}
+.hero .desc{margin:0 auto 1.5rem;color:#d8d4c8}
+.facts{display:flex;flex-wrap:wrap;gap:1rem 2.5rem;justify-content:center;margin:1.5rem 0;font-size:.85rem}
+.facts span{border-top:1px solid var(--gold);padding-top:.5rem}
+.facts b{display:block;color:var(--gold);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase}
+.btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.pt{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--champ);opacity:.6;animation:tw 5s ease-in-out infinite}
+@keyframes tw{50%{opacity:.1;transform:translateY(-14px)}}
+.hero>*{animation:in 1s both}.hero>*:nth-child(2){animation-delay:.15s}.hero>*:nth-child(3){animation-delay:.3s}.hero>*:nth-child(4){animation-delay:.45s}.hero>*:nth-child(n+5){animation-delay:.6s}
+@keyframes in{from{opacity:0;transform:translateY(24px)}}
+/* ===== TICKER ===== */
+.tick{background:var(--gold);color:var(--navy);overflow:hidden;white-space:nowrap;padding:.7rem 0;font:600 .8rem var(--sans);letter-spacing:.25em;position:relative;z-index:3}
+.tick div{display:inline-block;animation:mq 32s linear infinite}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* ===== SPLIT / CARDS ===== */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+@media(max-width:800px){.split{grid-template-columns:1fr}}
+.frame{border:1px solid var(--gold);padding:.7rem;background:var(--paper)}
+.frame>div{background:var(--navy);padding:2rem;color:var(--ivory);text-align:center}
+.quote{font:italic 500 clamp(1.4rem,3vw,1.9rem) var(--serif);border-left:2px solid var(--gold);padding-left:1rem;margin:1.5rem 0}
+.list{padding-left:1.2rem;margin:1rem 0}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;margin-top:2rem}
+.cols>div{border-top:2px solid var(--gold);padding-top:1rem}
+.band{text-align:center;font:600 clamp(1.3rem,3.4vw,2.2rem) var(--serif);letter-spacing:.12em;margin-top:3rem;padding:1.5rem 0;border-block:1px solid var(--gold)}
+.dates{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;margin:2rem 0}
+.date{border:1px solid var(--gold);padding:1.5rem;text-align:center}
+.date big{display:block;font:700 5rem/1 var(--serif);color:var(--gold)}
+.info{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem}
+.info div{border-bottom:1px solid rgba(197,163,99,.5);padding-bottom:.6rem}
+.info b{display:block;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+/* ===== COMMITTEES ===== */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:1.5rem;margin-top:2.5rem}
+.card{background:var(--mid);border:1px solid rgba(197,163,99,.35);padding:1.6rem;cursor:pointer;text-align:left;color:var(--ivory);font:inherit;transition:.35s;display:flex;flex-direction:column;gap:.7rem}
+.card:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 18px 40px rgba(0,0,0,.4)}
+.card svg{width:76px;height:76px}
+.card .n{font:700 .8rem var(--sans);letter-spacing:.2em;color:var(--gold)}
+.card h3{font-size:1.9rem}
+.card .ag{font-size:.85rem;color:#cfd3dc}
+.card .go{margin-top:auto;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+#modal{position:fixed;inset:0;z-index:100;background:rgba(3,9,20,.85);display:grid;place-items:center;padding:1rem;opacity:0;visibility:hidden;transition:.35s}
+#modal.o{opacity:1;visibility:visible}
+.pan{background:var(--ivory);color:var(--navy);max-width:640px;width:100%;max-height:90vh;overflow:auto;padding:2.2rem;border:1px solid var(--gold);outline:6px solid var(--ivory);outline-offset:-12px;transform:translateY(30px) scale(.97);transition:.35s}
+#modal.o .pan{transform:none}
+.pan svg{width:90px;height:90px;float:right;margin:0 0 1rem 1rem}
+.pan h3{font-size:2.4rem}
+.pan h4{font:700 .7rem var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--slate);margin:1.2rem 0 .3rem}
+.pan .agt{font:600 1.3rem var(--serif)}
+.x{float:left;margin-bottom:1rem}
+.pan::after{content:"";display:block;clear:both}
+/* ===== PEOPLE ===== */
+.ppl{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.5rem;margin:1.5rem 0 3rem}
+.p{text-align:center}
+.ini{width:84px;height:84px;border-radius:50%;margin:0 auto .6rem;display:grid;place-items:center;border:1px solid var(--gold);font:600 1.6rem var(--serif);color:var(--gold);background:var(--mid)}
+.p b{display:block}.p small{color:var(--slate);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase}
+.msgs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
+.msg{background:var(--paper);padding:1.8rem;border:1px solid var(--gold)}
+.msg h3{font:500 2rem var(--hand);color:var(--royal)}
+.msg blockquote{font:italic 500 1.2rem/1.5 var(--serif);margin:.8rem 0}
+.msg.full{grid-column:1/-1}
+.msg cite{font-style:normal;font-size:.8rem;color:var(--slate)}
+/* ===== PERKS / FAQ ===== */
+.perks{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;padding:1rem 0 1.5rem}
+.perk{flex:0 0 min(260px,78vw);scroll-snap-align:start;border:1px solid var(--gold);padding:1.4rem;background:var(--mid)}
+.perk h3{color:var(--champ);font-size:1.5rem;margin-bottom:.4rem}
+.perk p{font-size:.88rem;color:#cfd3dc}
+.gl{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+.gl div{background:var(--paper);border:1px solid var(--gold);padding:1.2rem;font-size:.92rem}
+.faq button{width:100%;text-align:left;background:none;border:0;border-bottom:1px solid var(--gold);padding:1.1rem 0;font:600 1.4rem var(--serif);color:inherit;display:flex;justify-content:space-between;cursor:pointer}
+.faq button::after{content:"+";color:var(--gold);transition:.3s}
+.faq button[aria-expanded=true]::after{transform:rotate(45deg)}
+.fa{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s}
+.fa.o{grid-template-rows:1fr}
+.fa>div{overflow:hidden}.fa p{padding:1rem 0}
+footer{background:var(--navy);color:var(--ivory);padding:4rem 1.25rem 2rem}
+footer .cols{margin-top:0}
+footer a{display:block;text-decoration:none;font-size:.88rem;color:var(--champ)}footer a:hover{color:var(--gold)}
+footer h3{font-size:1.2rem;color:var(--gold);margin-bottom:.5rem}
+.cp{text-align:center;margin-top:2rem;font-size:.75rem;color:var(--slate)}
+/* ===== REVEAL ===== */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s,transform .8s}
+.rv.v{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}.tick{overflow-x:auto}}
+</style>
+</head>
+<body>
+<!-- ===== CONFIG: edit registration / contact details here ===== -->
+<script>
+const CONFIG={
+  registrationUrl:"https://linktr.ee/ekamunofficial",
+  registrationNote:"Registration details for 17–18 October 2026 are shared by the organisers. Please confirm the current form, fees and process with them.",
+  email:"nexus.rainbowofficial@gmail.com",
+  phones:["9259148160","9149083670"],
+  instagram:"https://www.instagram.com/nexus.begins/",
+  ekamunInstagram:"https://www.instagram.com/ekamun.official/",
+  ekamunLinktree:"https://linktr.ee/ekamunofficial"
+};
+</script>
+
+<!-- ===== NAV ===== -->
+<nav id="nav" aria-label="Main">
+  <a class="logo" href="#top">NEXUS 2026</a>
+  <button id="burger" aria-expanded="false" aria-controls="links" aria-label="Toggle menu">☰</button>
+  <ul class="links" id="links">
+    <li><a href="#about">About</a></li><li><a href="#conference">The Conference</a></li><li><a href="#committees">Committees</a></li>
+    <li><a href="#secretariat">Secretariat</a></li><li><a href="#experience">Delegate Experience</a></li><li><a href="#faq">FAQs</a></li><li><a href="#contact">Contact</a></li>
+    <li><a class="btn reg" href="#register">Registration Information</a></li>
+  </ul>
+</nav>
+
+<main>
+<!-- ===== HERO ===== -->
+<section id="top" aria-label="NEXUS 2026">
+  <div id="pts"></div>
+  <div class="hero">
+    <svg class="emb" viewBox="0 0 200 200" role="img" aria-label="Phoenix emblem with laurel and star">
+      <path d="M100 6l3 9 9 3-9 3-3 9-3-9-9-3 9-3z" fill="#C5A363"/>
+      <circle cx="100" cy="108" r="78" fill="none" stroke="#C5A363" stroke-opacity=".5"/>
+      <ellipse cx="100" cy="108" rx="34" ry="78" fill="none" stroke="#C5A363" stroke-opacity=".3"/>
+      <path d="M20 112C24 70 44 44 60 36" fill="none" stroke="#C5A363" stroke-width="2"/><path d="M180 112C176 70 156 44 140 36" fill="none" stroke="#C5A363" stroke-width="2"/>
+      <g fill="#C5A363"><ellipse cx="28" cy="88" rx="3" ry="8" transform="rotate(-25 28 88)"/><ellipse cx="36" cy="68" rx="3" ry="8" transform="rotate(-35 36 68)"/><ellipse cx="172" cy="88" rx="3" ry="8" transform="rotate(25 172 88)"/><ellipse cx="164" cy="68" rx="3" ry="8" transform="rotate(35 164 68)"/></g>
+      <path d="M100 56c4 10 4 20 0 30c-4-10-4-20 0-30zM100 84c-14 4-20 22-12 44c-8 14-4 36 12 58c16-22 20-44 12-58c8-22 2-40-12-44z" fill="#C5A363"/>
+      <path d="M92 76C70 60 52 50 34 56c10 6 22 20 30 34c-8-2-16-2-22 0c14 6 26 18 34 30z" fill="#E6D3A2"/>
+      <path d="M108 76C130 60 148 50 166 56c-10 6-22 20-30 34c8-2 16-2 22 0c-14 6-26 18-34 30z" fill="#E6D3A2"/>
+      <path d="M92 150c-10 14-8 28 4 38M108 150c10 14 8 28-4 38" fill="none" stroke="#E6D3A2" stroke-width="2"/>
+    </svg>
+    <p class="pre">Rainbow School Presents</p>
+    <h1>NEXUS</h1>
+    <p class="sub">The Global Simulation</p>
+    <p class="assoc">In association with <b>EKAMUN</b></p>
+    <p class="tag">“Deliberate. Collaborate. Create Impact.”</p>
+    <p class="desc">NEXUS is a student-led Model United Nations and leadership summit bringing together young minds to debate, negotiate, research, and think beyond the classroom.</p>
+    <div class="facts"><span><b>Dates</b>17–18 October 2026</span><span><b>Venue</b>Rainbow School, Saharanpur, Uttar Pradesh</span><span><b>Format</b>Model United Nations and leadership summit</span></div>
+    <div class="btns"><a class="btn pri" href="#committees">Explore Committees</a><a class="btn" href="#conference">Event Information</a></div>
+  </div>
+</section>
+
+<!-- ===== TICKER ===== -->
+<div class="tick" aria-hidden="true"><div id="tk"></div></div>
+
+<!-- ===== ABOUT ===== -->
+<section id="about" class="paper torn">
+  <div class="wrap split">
+    <div class="rv">
+      <span class="hand">the summit</span>
+      <h2>WHAT IS NEXUS?</h2>
+      <p>NEXUS 2026 is a student-led MUN and leadership summit by Rainbow School, bringing together young minds to debate, negotiate, research, and think beyond the classroom.</p>
+      <ul class="list"><li>Debate meaningful issues and research complex agendas</li><li>Negotiate with different perspectives</li><li>Build public speaking and leadership skills</li><li>Collaborate with other delegates</li><li>Explore real-world challenges through simulations</li><li>Express ideas with confidence and responsibility</li></ul>
+      <p class="quote">An experience where ideas meet action, voices meet perspectives, and delegates find their NEXUS.</p>
+    </div>
+    <div class="frame rv"><div><svg viewBox="0 0 120 120" width="150" aria-hidden="true"><circle cx="60" cy="60" r="50" fill="none" stroke="#C5A363"/><circle cx="60" cy="60" r="36" fill="none" stroke="#C5A363" stroke-dasharray="3 5"/><path d="M60 20l5 17 17 5-17 5-5 17-5-17-17-5 17-5z" fill="#C5A363"/></svg><p class="hand" style="margin:1rem auto 0">where ideas meet impact</p></div></div>
+  </div>
+</section>
+
+<!-- ===== PARTNERSHIP ===== -->
+<section id="partners" class="dark">
+  <div class="wrap rv">
+    <h2>Rainbow School × EKAMUN</h2>
+    <p>Rainbow School presents NEXUS 2026 in association with EKAMUN — an experience built on dialogue, diplomacy, research, leadership and critical thinking.</p>
+    <div class="cols">
+      <div><h3>About Rainbow School</h3><p>Established in 1975, Rainbow School, Saharanpur began with a small nursery classroom and a big dream. Founded by Mrs. Nargis Malik, it has grown into a CBSE affiliated 10 + 2 co-educational institution. Under the leadership of Mrs. Amita Malik, School Director, and Mrs. Ashu Rathor, Principal, it prepares students to think independently, communicate confidently and lead responsibly.</p></div>
+      <div><h3>About EKAMUN and the collaboration</h3><p>EKAMUN is a platform built around meaningful discourse, diplomacy, and the art of informed dialogue. EKAMUN × NEXUS unites two platforms around the power of dialogue, leadership and intellectual curiosity, giving young voices a meaningful space to be heard.</p></div>
+    </div>
+    <div class="band">ONE VISION. A GENERATION READY TO LEAD.</div>
+  </div>
+</section>
+
+<!-- ===== EVENT DETAILS ===== -->
+<section id="conference" class="paper torn">
+  <div class="wrap rv">
+    <h2>The Conference</h2>
+    <div class="dates"><div class="date"><big>17</big>October 2026 · Day One</div><div class="date"><big>18</big>October 2026 · Day Two</div></div>
+    <div class="info">
+      <div><b>Event</b>NEXUS 2026 — The Global Simulation</div><div><b>Host</b>Rainbow School</div><div><b>Location</b>Saharanpur, Uttar Pradesh</div>
+      <div><b>Association</b>EKAMUN</div><div><b>Format</b>Student-led Model United Nations and leadership summit</div><div><b>Schedule</b>Detailed schedule to be announced</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COMMITTEES ===== -->
+<section id="committees" class="dark">
+  <div class="wrap">
+    <div class="rv"><span class="hand">six unique committees</span><h2>Committees &amp; Agendas</h2></div>
+    <div class="grid" id="cgrid"></div>
+  </div>
+</section>
+
+<!-- ===== SECRETARIAT & MESSAGES ===== -->
+<section id="secretariat" class="paper">
+  <div class="wrap rv">
+    <h2>Secretariat</h2>
+    <h3>Core Secretariat</h3>
+    <div class="ppl" id="core"></div>
+    <h3>The Secretariat</h3>
+    <div class="ppl" id="sec"></div>
+    <h2 style="margin-top:3rem"><span class="hand" style="font-size:2.4rem">Messages from the desks</span></h2>
+    <div class="msgs">
+      <div class="msg"><h3>From the Director's Desk</h3><blockquote>“Nexus is not simply about winning awards. It is about becoming more thoughtful, confident, and compassionate young individuals.”</blockquote><cite>Mrs. Amita Malik, Director, Rainbow School, Saharanpur</cite></div>
+      <div class="msg"><h3>From the Principal's Desk</h3><blockquote>“NEXUS was born from a simple belief: when we give young minds a platform to speak, they don't just simulate diplomacy—they redefine the future.”</blockquote><cite>Mrs Ashu Rathore, Principal, Rainbow School</cite></div>
+      <div class="msg"><h3>From the EKAMUN Founder's Desk</h3><blockquote>“Here's to two organisations, one vision, and a generation ready to lead.”</blockquote><cite>Chaitanya Chouhan, Founder &amp; President, EKAMUN</cite></div>
+      <div class="msg full"><h3>From the Secretary General's Desk</h3><blockquote>It was a normal proposal at first but then it turned into a great idea called NEXUS!<br><br>Nexus 2026 started as an idea, but it has grown into something much bigger, a platform for students to speak, debate, lead, and create.<br><br>As Secretary General, I'm incredibly excited to welcome you all to an experience that is meant to be challenging, competitive, and most importantly, fun.<br><br>So come with your opinions, your confidence, and a little bit of chaos.<br><br>Welcome to Nexus 2026. Let's make it unforgettable.</blockquote><cite>Trishita Gautam, Secretary General, Nexus 2026</cite></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DELEGATE EXPERIENCE ===== -->
+<section id="experience" class="dark">
+  <div class="wrap rv">
+    <h2>Delegate Experience</h2>
+    <div class="perks" id="perks"></div>
+    <p style="margin-top:1rem;color:var(--champ)">The brochure also lists personalised delegate kits and meals throughout the conference; organisers will confirm final details.</p>
+  </div>
+</section>
+
+<!-- ===== GUIDELINES ===== -->
+<section id="guidelines" class="paper torn">
+  <div class="wrap rv">
+    <h2>General Guidelines</h2>
+    <div class="gl">
+      <div>Follow MUN terminology and procedure as provided.</div><div>Come prepared with adequate research on your agenda and relevant issues.</div><div>Maintain professional conduct, decorum, and diplomatic etiquette.</div>
+      <div>Stay in character with your allotted country or portfolio and represent its policies and interests.</div><div>Adhere to the Rules of Procedure and directives of the Executive Board.</div><div>Uphold the integrity, spirit, and objectives of the simulation.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== REGISTRATION ===== -->
+<section id="register" class="dark" style="text-align:center">
+  <div class="wrap rv">
+    <h2>YOUR VOICE. YOUR STRATEGY. YOUR NEXUS.</h2>
+    <p style="margin:0 auto 1rem">Join delegates, journalists and leaders at Rainbow School, Saharanpur, on 17–18 October 2026.</p>
+    <p id="regnote" style="margin:0 auto 1.5rem;color:var(--champ)"></p>
+    <div class="btns"><a class="btn pri" id="regbtn" href="#" target="_blank" rel="noopener">Registration Information</a><a class="btn" href="#committees">Explore Committees</a></div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq" class="paper">
+  <div class="wrap faq rv"><h2>FAQs</h2><div id="faqs"></div></div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="dark">
+  <div class="wrap rv">
+    <span class="hand">Get in touch</span><h2>Let's build dialogue. Lead with purpose.</h2>
+    <div class="info" id="cinfo"></div>
+  </div>
+</section>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <div class="logo" style="font-size:2.2rem">NEXUS 2026</div>
+    <p style="margin:.5rem 0 2rem">Presented by Rainbow School, in association with EKAMUN.</p>
+    <div class="cols">
+      <div><h3>Explore</h3><a href="#about">About</a><a href="#conference">The Conference</a><a href="#secretariat">Secretariat</a><a href="#faq">FAQs</a></div>
+      <div><h3>Committees</h3><div id="flinks"></div></div>
+      <div><h3>Official</h3><a id="f1" target="_blank" rel="noopener">NEXUS Instagram</a><a id="f2" target="_blank" rel="noopener">EKAMUN Instagram</a><a id="f3" target="_blank" rel="noopener">EKAMUN Linktree</a><a id="f4"></a></div>
+    </div>
+    <p class="cp">© <span id="yr"></span> NEXUS 2026 · Rainbow School × EKAMUN</p>
+  </div>
+</footer>
+
+<!-- ===== COMMITTEE MODAL ===== -->
+<div id="modal" role="dialog" aria-modal="true" aria-labelledby="mt" aria-hidden="true"><div class="pan" id="pan"></div></div>
+
+<script>
+/* ===== DATA ===== */
+const G='fill="none" stroke="#C5A363" stroke-width="2"';
+const ring='<circle cx="40" cy="40" r="37" '+G+'/>';
+const COMMITTEES=[
+{n:"01",name:"THE INFLUENCE GAMES",full:"",agenda:"Should Individuals Be Held Accountable and Subject to Public Cancellation for Their Mistakes and Misconduct Online?",
+ desc:"Explore the increasingly blurred line between accountability and online punishment. Examine cancel culture, public shaming, freedom of expression, digital footprints, social-media platforms, online harassment, and whether individuals deserve opportunities for rehabilitation and a second chance.",
+ svg:ring+'<circle cx="40" cy="26" r="6" '+G+'/><circle cx="24" cy="52" r="6" '+G+'/><circle cx="56" cy="52" r="6" '+G+'/><path d="M40 32L26 47M40 32l14 15M30 52h20" '+G+'/>'},
+{n:"02",name:"IPJ COMMITTEE",full:"International Press",agenda:"",
+ desc:"International press will include photographers and journalists. As the media wing of NEXUS, the press observes proceedings, documents committee discussions, interviews participants, and captures the conference experience.",
+ svg:ring+'<rect x="20" y="30" width="40" height="26" rx="3" '+G+'/><circle cx="40" cy="43" r="8" '+G+'/><path d="M32 30l3-5h10l3 5" '+G+'/>'},
+{n:"03",name:"UNHRC",full:"United Nations Human Rights Council",agenda:"Addressing Targeted Violence and Systematic Human Rights Violations Against Religious Minorities in Bangladesh, with Particular Focus on the Hindu Community.",
+ desc:"Examine the protection of religious minorities, targeted violence, human rights, accountability, access to justice, protection of vulnerable communities, and the role of national and international institutions.",
+ svg:ring+'<path d="M18 46C22 28 32 22 40 20C48 22 58 28 62 46" '+G+'/><path d="M40 24c-8 8-8 18 0 28c8-10 8-20 0-28z" '+G+'/><path d="M26 56h28" '+G+'/>'},
+{n:"04",name:"LOK SABHA",full:"",agenda:"Deliberation on the Impact of Social Media on Indian Democracy, with Special Emphasis on Political Discourse, Electoral Processes, and Public Opinion.",
+ desc:"Explore social-media campaigning, misinformation, political communication, electoral behaviour, digital influence, political polarisation, transparency, and responsible participation in Indian democracy. Delegates approach the issue from the perspective of Indian political parties and MPs rather than as a conventional UN committee.",
+ svg:ring+'<path d="M20 52h40M24 52V38M32 52V38M40 52V38M48 52V38M56 52V38M20 38h40M28 38c0-12 24-12 24 0" '+G+'/>'},
+{n:"05",name:"IPL",full:"",agenda:"MEGA AUCTION 2027",
+ desc:"Step into the world of franchise strategy, player selection, auction decisions, team composition, and competitive bidding. Create an interactive presentation that communicates the high-stakes strategic nature of a mega auction.",
+ svg:ring+'<path d="M26 56L50 24" '+G+'/><rect x="48" y="18" width="8" height="18" rx="2" transform="rotate(28 52 27)" '+G+'/><circle cx="30" cy="30" r="5" '+G+'/>'},
+{n:"06",name:"HARRY POTTER",full:"",agenda:"Should the Wizarding World Abandon the Statute of Secrecy and Reveal the Existence of Magic to the Muggle World?",
+ desc:"Explore the fictional wizarding world's dilemma over secrecy and disclosure, including coexistence, security, magical knowledge, social consequences, government responsibility, and the possibility of peaceful coexistence.",
+ svg:ring+'<path d="M16 54V40l5-4v-8l4 4v-6l4 6v6l5-6 4 6v12l4-8v16z" '+G+'/><path d="M56 20l1.5 4 4 1.5-4 1.5-1.5 4-1.5-4-4-1.5 4-1.5z" fill="#C5A363"/>'}
+];
+const CORE=[["Chaitanya Chauhan","Founder & President, EKAMUN"],["Trishita Gautam","Secretary General, NEXUS 2026"],["Vasudev Aggarwal","Core Secretariat"],["Riddhi Garg","Core Secretariat"]];
+const SEC=[["Deepanshi Arora","Director General"],["Kunj Arora","Deputy Director General"],["Aradhya Kaushik","USG Design"],["Veer Kapoor","USG Media"],["Aradhya Walia","USG Marketing"],["Raghav Soni","USG Logistics"],["Adeeba","USG Hospitality"],["Madhav Raswant","USG Photography"],["Mannat Gilhotra","USG Creative Heads"],["Madhav Sareen","USG Creative Heads"],["Aditi Shandilya","USG Delegate Affairs"]];
+const PERKS=[["Personal Growth","Step beyond your comfort zone, challenge yourself, and develop skills that extend well beyond the conference room."],["Exposure & Networking","Gain meaningful exposure to diverse perspectives, new ideas, and a wider network of like-minded students."],["Global Awareness","A deeper understanding of international affairs, global challenges, and diverse geopolitical perspectives."],["Diplomacy & Negotiation","Learn to navigate differing perspectives, negotiate effectively, and arrive at constructive solutions."],["Enhanced Public Speaking","Build confidence and articulate ideas effectively in a formal setting."],["Research & Critical Thinking","Prepare on complex agendas and weigh evidence before taking a position."],["Collaboration & Leadership","Work with other delegates to build consensus and lead with purpose."]];
+const FAQ=[["What is NEXUS 2026?","A student-led MUN and leadership summit by Rainbow School, in association with EKAMUN, bringing together young minds to debate, negotiate, research, and think beyond the classroom."],
+["Where will NEXUS take place?","At Rainbow School, Saharanpur, Uttar Pradesh."],["When is the conference?","17–18 October 2026. The detailed schedule is to be announced."],
+["Which committees are available?","The Influence Games, IPJ Committee, UNHRC, Lok Sabha, IPL (Mega Auction 2027) and Harry Potter."],
+["What is the IPJ Committee?","The International Press, the media wing of NEXUS. Members act as journalists and photographers rather than representing a country, covering proceedings across committees."],
+["Do delegates need previous MUN experience?","The brochure does not state an experience requirement. Please ask the organisers."],
+["How can participants prepare for their committees?","Research your agenda, your country or portfolio, and relevant issues, and follow MUN terminology and the Rules of Procedure."],
+["Where can I find registration information?","Use the Registration Information button on this page, or contact the organisers using the details in the Contact section."],
+["How can I follow official updates?","Follow NEXUS on Instagram (@nexus.begins) and EKAMUN on Instagram (@ekamun.official)."]];
+
+/* ===== BUILD ===== */
+const $=s=>document.querySelector(s);
+$('#tk').innerHTML=Array(2).fill(["NEXUS 2026","DELIBERATE","COLLABORATE","CREATE IMPACT","SIX UNIQUE COMMITTEES","LEADERSHIP THROUGH DIALOGUE","RAINBOW SCHOOL × EKAMUN"].map(t=>t+" &nbsp;✦&nbsp; ").join("")).join("");
+$('#pts').innerHTML=Array.from({length:22},(_,i)=>`<i class="pt" style="left:${(i*37)%100}%;top:${(i*53)%100}%;animation-delay:${i*.4}s"></i>`).join("");
+$('#cgrid').innerHTML=COMMITTEES.map((c,i)=>`<button class="card rv" data-i="${i}" aria-haspopup="dialog" style="transition-delay:${i*70}ms"><svg viewBox="0 0 80 80" aria-hidden="true">${c.svg}</svg><span class="n">${c.n}</span><h3>${c.name}</h3>${c.full?`<span class="ag">${c.full}</span>`:''}<span class="ag">${c.agenda||c.desc.slice(0,90)+'…'}</span><span class="go">Explore Committee</span></button>`).join("");
+const person=a=>`<div class="p"><div class="ini" aria-hidden="true">${a[0].split(" ").map(w=>w[0]).slice(0,2).join("")}</div><b>${a[0]}</b><small>${a[1]}</small></div>`;
+$('#core').innerHTML=CORE.map(person).join("");$('#sec').innerHTML=SEC.map(person).join("");
+$('#perks').innerHTML=PERKS.map(p=>`<div class="perk"><h3>${p[0]}</h3><p>${p[1]}</p></div>`).join("");
+$('#faqs').innerHTML=FAQ.map((f,i)=>`<h3 style="font-size:1rem"><button aria-expanded="false" aria-controls="a${i}" id="q${i}">${f[0]}</button></h3><div class="fa" id="a${i}" role="region" aria-labelledby="q${i}"><div><p>${f[1]}</p></div></div>`).join("");
+document.querySelectorAll('.faq button').forEach(b=>b.onclick=()=>{const o=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',!o);b.parentElement.nextElementSibling.classList.toggle('o',!o)});
+/* config wiring */
+$('#regbtn').href=CONFIG.registrationUrl;$('#regnote').textContent=CONFIG.registrationNote;
+document.querySelector('.reg').addEventListener('click',()=>{});
+$('#cinfo').innerHTML=`<div><b>Location</b>Rainbow School, Saharanpur, Uttar Pradesh</div><div><b>Instagram</b><a href="${CONFIG.instagram}" target="_blank" rel="noopener">@nexus.begins</a></div><div><b>Email</b><a href="mailto:${CONFIG.email}">${CONFIG.email}</a></div><div><b>Contact</b>${CONFIG.phones.map(p=>`<a href="tel:${p}">${p}</a>`).join("<br>")}</div><div><b>EKAMUN</b><a href="${CONFIG.ekamunInstagram}" target="_blank" rel="noopener">Instagram</a> · <a href="${CONFIG.ekamunLinktree}" target="_blank" rel="noopener">Linktree</a></div>`;
+$('#f1').href=CONFIG.instagram;$('#f2').href=CONFIG.ekamunInstagram;$('#f3').href=CONFIG.ekamunLinktree;$('#f4').remove();
+$('#flinks').innerHTML=COMMITTEES.map((c,i)=>`<a href="#committees" data-i="${i}">${c.name}</a>`).join("");
+$('#yr').textContent=new Date().getFullYear();
+
+/* ===== NAV ===== */
+const nav=$('#nav'),links=$('#links'),bg=$('#burger');
+addEventListener('scroll',()=>nav.classList.toggle('s',scrollY>40),{passive:true});
+const setMenu=o=>{links.classList.toggle('o',o);bg.setAttribute('aria-expanded',o);bg.textContent=o?'✕':'☰'};
+bg.onclick=()=>setMenu(!links.classList.contains('o'));
+links.querySelectorAll('a').forEach(a=>a.onclick=()=>setMenu(false));
+
+/* ===== MODAL ===== */
+const modal=$('#modal'),pan=$('#pan');let last=null;
+function openC(i){const c=COMMITTEES[i];last=document.activeElement;
+pan.innerHTML=`<button class="btn x" id="cl" aria-label="Close committee details">Close</button><svg viewBox="0 0 80 80" aria-hidden="true" style="background:var(--navy);border-radius:50%">${c.svg}</svg><p class="n" style="font-weight:700;color:var(--gold);letter-spacing:.2em">${c.n}</p><h3 id="mt">${c.name}</h3>${c.full?`<p>${c.full}</p>`:''}${c.agenda?`<h4>Agenda</h4><p class="agt">${c.agenda}</p>`:''}<h4>About the committee</h4><p>${c.desc}</p>`;
+modal.classList.add('o');modal.setAttribute('aria-hidden','false');$('#cl').focus();$('#cl').onclick=closeC;document.body.style.overflow='hidden'}
+function closeC(){modal.classList.remove('o');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';last&&last.focus()}
+document.querySelectorAll('.card').forEach(c=>c.onclick=()=>openC(c.dataset.i));
+document.querySelectorAll('#flinks a').forEach(a=>a.onclick=e=>{e.preventDefault();$('#committees').scrollIntoView();setTimeout(()=>openC(a.dataset.i),500)});
+modal.onclick=e=>{if(e.target===modal)closeC()};
+addEventListener('keydown',e=>{if(!modal.classList.contains('o'))return;if(e.key==='Escape')closeC();if(e.key==='Tab'){e.preventDefault();$('#cl').focus()}});
+
+/* ===== REVEAL ===== */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+/* desktop-only parallax on emblem */
+if(matchMedia('(min-width:1021px) and (prefers-reduced-motion:no-preference)').matches){const em=$('.emb');addEventListener('mousemove',e=>{em.style.translate=((e.clientX/innerWidth-.5)*16)+'px '+((e.clientY/innerHeight-.5)*10)+'px'},{passive:true})}
+</script>
+</body>
+</html>
